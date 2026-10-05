@@ -51,6 +51,7 @@ export default function FirstVideo() {
         <video
           ref={videoRef}
           muted
+          autoplay
           playsInline
           preload="auto"
           src="/videos/output1.mp4"
