@@ -5,27 +5,26 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function FirstVideo() {
+const SecondVideo = () => {
   const videoRef = useRef(null);
 
   useGSAP(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    gsap.set(".first-vd-wrapper", { marginTop: "-150vh", opacity: 0 });
+    gsap.set(".lucia", { marginTop: "-60vh", opacity: 0 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".first-vd-wrapper",
+        trigger: ".lucia",
         start: "top top",
-        end: "+=200% top",
-        scrub: true,
+        end: "bottom top",
+        scrub: 2,
         pin: true,
       },
     });
 
-    tl.to(".hero-section", { delay: 0.5, opacity: 0, ease: "power1.inOut" });
-    tl.to(".first-vd-wrapper", { opacity: 1, duration: 2, ease: "power1.inOut" });
+    tl.to(".lucia", { opacity: 1, duration: 1, ease: "power1.inOut" });
 
     const addVideoTween = () => {
       tl.to(
@@ -46,17 +45,20 @@ export default function FirstVideo() {
   }, []);
 
   return (
-    <section className="first-vd-wrapper">
+    <section className="lucia">
       <div className="h-dvh">
         <video
           ref={videoRef}
           muted
           playsInline
           preload="auto"
-          src="/videos/output1.mp4"
-          className="first-vd"
+          src="/videos/output2.mp4"
+          className="size-full object-cover second-vd"
+          style={{ objectPosition: "15% 0%" }}
         />
       </div>
     </section>
   );
-}
+};
+
+export default SecondVideo;
