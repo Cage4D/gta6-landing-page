@@ -5,6 +5,7 @@ import NavBar from "./sections/NavBar"
 import FirstVideo from "./sections/FirstVideo"
 import Jason from "./sections/Jason"
 import SecondVideo from "./sections/SecondVideo"
+import Lucia from "./sections/Lucia"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
             <FirstVideo/>
             <Jason/>
             <SecondVideo/>
+            <Lucia/>
         </main>
     )
 }
